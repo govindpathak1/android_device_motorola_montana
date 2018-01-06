@@ -295,7 +295,7 @@ PRODUCT_PACKAGES += \
 
 # Thermal
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal-engine-cedric.conf:system/etc/thermal-engine-cedric.conf
+    $(LOCAL_PATH)/configs/thermal-engine-montana.conf:system/etc/thermal-engine-montana.conf
 
 # USB HAL
 PRODUCT_PACKAGES += \
