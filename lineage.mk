@@ -16,11 +16,11 @@
 
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, device/motorola/cedric/full_cedric.mk)
+$(call inherit-product, device/motorola/montana/full_montana.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # for specific
-$(call inherit-product, vendor/motorola/cedric/cedric-vendor.mk)
+$(call inherit-product, vendor/motorola/montana/montana-vendor.mk)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
@@ -30,7 +30,7 @@ TARGET_SCREEN_WIDTH := 1080
 TARGET_SCREEN_HEIGHT := 1920
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := cedric
-PRODUCT_NAME := lineage_cedric
+PRODUCT_DEVICE := montana
+PRODUCT_NAME := lineage_montana
 PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola

@@ -14,9 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
--include vendor/motorola/cedric/BoardConfigVendor.mk
+-include vendor/motorola/montana/BoardConfigVendor.mk
 
-LOCAL_PATH := device/motorola/cedric
+LOCAL_PATH := device/motorola/montana
 
 BOARD_VENDOR := motorola-qcom
 
@@ -44,7 +44,7 @@ TARGET_CPU_VARIANT := cortex-a53
 TARGET_USES_64_BIT_BINDER := true
 
 # Asserts
-TARGET_OTA_ASSERT_DEVICE := cedric,cedric_retail
+TARGET_OTA_ASSERT_DEVICE := montana,montana_retail
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237
@@ -58,7 +58,7 @@ TARGET_CUSTOM_DTBTOOL := dtbTool_custom
 BOARD_DTBTOOL_ARGS := --force-v3 --motorola 1
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 TARGET_KERNEL_ARCH := arm
-TARGET_KERNEL_CONFIG := cedric_defconfig
+TARGET_KERNEL_CONFIG := montana_defconfig
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8937
 
 # Audio
@@ -132,8 +132,8 @@ USE_OPENGL_RENDERER := true
 BOARD_HAVE_QCOM_FM := true
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_cedric
-TARGET_RECOVERY_DEVICE_MODULES := libinit_cedric
+TARGET_INIT_VENDOR_LIB := libinit_montana
+TARGET_RECOVERY_DEVICE_MODULES := libinit_montana
 
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
@@ -172,7 +172,7 @@ LZMA_RAMDISK_TARGETS := recovery
 
 # SELinux
 #include device/qcom/sepolicy/sepolicy.mk
-#BOARD_SEPOLICY_DIRS += device/motorola/cedric/sepolicy
+#BOARD_SEPOLICY_DIRS += device/motorola/montana/sepolicy
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true

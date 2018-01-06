@@ -19,7 +19,7 @@
 set -e
 
 # Required!
-DEVICE=cedric
+DEVICE=montana
 VENDOR=motorola
 
 INITIAL_COPYRIGHT_YEAR=2017
