@@ -26,10 +26,10 @@
 #
 
 # the DIAG device node is not world writable/readable.
-/dev/diag                 0660   system     oem_2950
-/dev/ttydiag0             0660   system     oem_2950
-/dev/ttydiag1             0660   system     oem_2950
-/dev/ttydiag2             0660   system     oem_2950
+/dev/diag                 0660   system     qcom_diag
+/dev/ttydiag0             0660   system     qcom_diag
+/dev/ttydiag1             0660   system     qcom_diag
+/dev/ttydiag2             0660   system     qcom_diag
 
 /dev/genlock              0666   system     system
 /dev/kgsl                 0666   system     system
@@ -174,8 +174,8 @@
 /dev/msm_preproc_ctl      0660   system     audio
 /dev/msm_rtac             0660   system     audio
 /dev/msm_voicememo        0660   system     audio
-/dev/smd3                 0660   bluetooth  bluetooth
-/dev/smd2                 0660   bluetooth  bluetooth
+/dev/smd3                 0660   bluetooth  net_bt_stack
+/dev/smd2                 0660   bluetooth  net_bt_stack
 /dev/ttyHSL1              0660   system     system
 /dev/ttyHS1               0660   system     system
 /dev/mdm                  0660   system     radio
@@ -250,6 +250,13 @@
 /sys/devices/soc/600000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/net/wlan0/queues/rx-* rps_cpus 0660 system system
 /sys/devices/soc/600000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/net/p2p0/queues/rx-* rps_cpus 0660 system system
 
+#nfc permissions
+/dev/nfc-nci              0660    nfc         nfc
+/dev/nq-nci               0660    nfc         nfc
+/dev/assd                 0660    nfc         nfc
+/dev/pn544                0660    nfc         nfc
+/dev/bcm2079x-i2c         0660    nfc         nfc
+
 # UIO devices
 /dev/uio0                 0660   system     system
 /dev/uio1                 0660   system     system
@@ -277,6 +284,7 @@
 # Add device block for FRP
 /dev/block/platform/soc/7464900.sdhci/by-name/frp       0600   system     system
 /dev/block/platform/soc/624000.ufshc/by-name/frp        0600   system     system
+/dev/block/platform/soc/1da4000.ufshc/by-name/frp       0600   system     system
 /dev/block/bootdevice/by-name/frp 0600 system system
 
 # I2C
@@ -320,6 +328,7 @@
 
 # RAW device
 /dev/gbraw*             0660   root   oem_5020
+
 # Audio device
 /sys/devices/platform/mods_codec.0 uevent 0660 root oem_5020
 /sys/devices/platform/mods_codec.0/* uevent 0660 root oem_5020
@@ -342,3 +351,8 @@
 
 #Egistec fingerprint
 /dev/esfp0		  0660   system     system
+
+# Trustonic TEE device
+/dev/mobicore             0600   system     system
+/dev/mobicore-user        0666   system     system
+

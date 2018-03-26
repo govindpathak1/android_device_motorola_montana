@@ -1,6 +1,6 @@
-#!/system/bin/sh
+#!/system/vendor/bin/sh
 
-PATH=/sbin:/system/sbin:/system/bin:/system/xbin
+PATH=/sbin:/system/sbin:/system/bin:/system/vendor/bin:/system/xbin
 export PATH
 
 while getopts dpfr op;
@@ -20,7 +20,7 @@ config_mp=/proc/config
 reboot_utag=$hw_mp/.reboot
 touch_status_prop=hw.touch.status
 hw_cfg_file=hw_config.xml
-vhw_file=/system/etc/vhw.xml
+vhw_file=/system/vendor/etc/vhw.xml
 bp_file=/system/build.prop
 oem_file=/oem/oem.prop
 load_error=3

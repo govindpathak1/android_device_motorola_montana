@@ -293,8 +293,8 @@ $(LOCAL_BUILT_MODULE):
 	$(hide) touch $@
 
 
-include device/motorola/cedric/tftp.mk
-include device/motorola/cedric/expat.mk
+include device/motorola/montana/tftp.mk
+include device/motorola/montana/expat.mk
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 

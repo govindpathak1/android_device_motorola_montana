@@ -1,6 +1,5 @@
 /*
    Copyright (c) 2014, The Linux Foundation. All rights reserved.
-
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
    met:
@@ -13,7 +12,6 @@
     * Neither the name of The Linux Foundation nor the names of its
       contributors may be used to endorse or promote products derived
       from this software without specific prior written permission.
-
    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
@@ -34,6 +32,9 @@
 #include <android-base/properties.h>
 #include "property_service.h"
 #include "vendor_init.h"
+
+namespace android {
+namespace init {
 
 void property_override(char const prop[], char const value[])
 {
@@ -66,7 +67,7 @@ void vendor_load_properties()
         return;
 
     std::string sku = android::base::GetProperty("ro.boot.hardware.sku", "");
-    property_set("ro.product.model", sku.c_str());
+    property_override("ro.product.model", sku.c_str());
 
     // rmt_storage
     std::string device = android::base::GetProperty("ro.boot.device", "");
@@ -77,4 +78,7 @@ void vendor_load_properties()
 
     num_sims();
 
+}
+
+}
 }

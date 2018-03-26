@@ -16,14 +16,13 @@
 
 -include vendor/motorola/montana/BoardConfigVendor.mk
 
-LOCAL_PATH := device/motorola/montana
+DEVICE_PATH := device/motorola/montana
 
 BOARD_VENDOR := motorola-qcom
 
 # AIDs and CAPS
-TARGET_FS_CONFIG_GEN := \
-    $(LOCAL_PATH)/fs_config/mot_aids.txt \
-    $(LOCAL_PATH)/fs_config/file_caps.txt
+TARGET_ALLOW_LEGACY_AIDS := true
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8937
@@ -93,7 +92,7 @@ BOARD_USES_GENERIC_AUDIO := true
 TARGET_USES_QCOM_MM_AUDIO := true
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 QCOM_BT_READ_ADDR_FROM_PROP := true
@@ -144,6 +143,9 @@ TARGET_PROVIDES_LIBLIGHT := true
 # Media
 TARGET_USES_MEDIA_EXTENSIONS := true
 
+NXP_CHIP_TYPE := PN544
+BOARD_NFC_HAL_SUFFIX := $(TARGET_BOARD_PLATFORM)
+
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -165,14 +167,14 @@ BOARD_USES_QC_TIME_SERVICES := true
 
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 LZMA_RAMDISK_TARGETS := recovery
 
 # SELinux
 #include device/qcom/sepolicy/sepolicy.mk
-#BOARD_SEPOLICY_DIRS += device/motorola/montana/sepolicy
+#BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true

@@ -243,3 +243,8 @@ ro.usb.bpteth_adb=0x2ee8
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.at_library=libqti-at.so
 ro.vendor.gt_library=libqti-gt.so
+
+#ADB Debug from Recovery
+persist.service.adb.enable=1                                                  
+persist.service.debuggable=1
+persist.sys.usb.config mtp,adb

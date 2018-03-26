@@ -24,5 +24,4 @@ LOCAL_SRC_FILES := init_montana.cpp
 LOCAL_MODULE := libinit_montana
 LOCAL_STATIC_LIBRARIES := \
     libbase
-
 include $(BUILD_STATIC_LIBRARY)

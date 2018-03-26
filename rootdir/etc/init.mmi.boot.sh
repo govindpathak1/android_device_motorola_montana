@@ -1,6 +1,6 @@
-#!/system/bin/sh
+#!/system/vendor/bin/sh
 
-PATH=/sbin:/system/sbin:/system/bin:/system/xbin
+PATH=/sbin:/system/sbin:/system/bin:/system/vendor/bin:/system/xbin
 export PATH
 
 scriptname=${0##*/}
@@ -30,7 +30,7 @@ start_copying_prebuilt_qcril_db()
 }
 
 # We take this from cpuinfo because hex "letters" are lowercase there
-set -A cinfo `cat /proc/cpuinfo | /system/bin/grep Revision`
+set -A cinfo `cat /proc/cpuinfo | /system/vendor/bin/grep Revision`
 hw=${cinfo[2]#?}
 
 # Now "cook" the value so it can be matched against devtree names
